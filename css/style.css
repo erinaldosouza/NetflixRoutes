@@ -12,6 +12,10 @@ header {
     background-color: #b9090b;
 }
 
+footer {
+    width: 100%;
+}
+
 header img {
     width: 25%;
     margin-left: 35%;
