@@ -3,16 +3,48 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
-        <tile>Netflix Router Sample</tile>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/materialize.css">
+        <title>Netflix Router Sample</title>
     </head>
     <body>
         <header>
-            <img src="images/logo.png"/>
+            <img class = "responsive-img" src="images/logo.png"/>
         </header>
-            
-        <div ng-view>
         
-        </div>
+        <nav>
+            <div class="nav-wrapper">
+                <form>
+                    <a href="#" class="left brand-logo">Netflix</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down"> 
+                        <li><a href="#"><i class="material-icons">search</i></a></li>
+                    </ul>
+                </form>
+            </div>
+        </nav>
+    
+        <main>
+            <div ng-view>
+        
+            </div>
+        </main>
+            
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col 16 s12">
+                        <h5 class="white-text">Filmes e Series</h5>
+                        <p class="grey-text text-lighten-4">O melhor para você e sua família!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    2016 FA7 Copyright 
+                </div>
+            </div>
+        </footer>
+        
     </body>
     
     <script src="js/jquery.min.js"></script>
