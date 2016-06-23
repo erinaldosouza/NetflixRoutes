@@ -1,1 +1,1 @@
-angular.module('NetflixRouter', ['ngRouter']);
+angular.module('NetflixRouter', ['ngRoute']);
