@@ -1,0 +1,9 @@
+header {
+    width: 100%;
+    background-color: #b9090b;
+}
+
+header img {
+    width: 45%;
+    margin-left: 25%;
+}
