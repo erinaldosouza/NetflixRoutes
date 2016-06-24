@@ -20,3 +20,8 @@ header img {
     width: 25%;
     margin-left: 35%;
 }
+
+.progress {
+     margin-left: 25% !important;
+     width:50% !important;
+}
