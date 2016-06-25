@@ -16,6 +16,10 @@ header {
     background-color: #b9090b;
 }
 
+.brand-logo{
+	padding-left:15px;
+}
+
 footer {
     width: 100%;
 }
@@ -48,6 +52,10 @@ main {
 .row .col .s8{
 	width: 100%;
 }
+
+.row{
+	text-align: center;
+}
 @media (max-width: 991px){
 
 		.slider {
@@ -61,7 +69,7 @@ main {
 	font-size: 1.5rem;
 	}
 		.hide-on-med-and-down {
-     display: list-item !important; 
+    /*  display: list-item !important;  */
 }
 
 	
