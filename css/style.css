@@ -5,6 +5,7 @@
 
 body {
     width: 99%;
+    max-height: 1000px;
 }
 
 header {
@@ -21,7 +22,18 @@ header img {
     margin-left: 35%;
 }
 
+.slider {
+    width: 33% !important;
+    float: left !important;
+    margin-left: 28%;
+}
+
 .progress {
      margin-left: 25% !important;
      width:50% !important;
 }
+
+main {
+    height: 500px !important;
+}
+

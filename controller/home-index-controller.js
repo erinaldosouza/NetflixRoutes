@@ -1,7 +1,7 @@
 angular.module('NetflixRouter')
        .controller('HomeIndexController', function($http) {
             this.preload = false;
-            $http.get("#/form-consulta");       
+            $http.get("#/index");       
         });
 
 
