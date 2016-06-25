@@ -37,3 +37,10 @@ main {
     height: 500px !important;
 }
 
+.ng-invalid .ng-dirty {
+    border-color: darkred;
+}
+
+.ng-valid .ng-dirty {
+    border-color: greenyellow;
+}
