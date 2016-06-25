@@ -5,6 +5,7 @@
 		       <link rel="stylesheet" href="css/materialize.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		
  
         <title>Netflix Router Sample</title>
     </head>
@@ -16,10 +17,15 @@
         <nav>
             <div class="nav-wrapper">
                 <form>
-                    <a href="#/" class="left brand-logo textoLogo">Netflix Preview</a>
+                    <a href="#/" class="left brand-logo ">Netflix Preview</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down"> 
                         <li><a ng-href="#/formconsulta"><i class="material-icons">search</i></a></li>
                     </ul>
+					
+					  <div class="fixed-action-btn " style="bottom: 15px; right: 14px;">
+    <a ng-href="#/formconsulta" class="btn-floating btn-large red">
+      <i class="large material-icons">search</i>
+    </a>
                 </form>
             </div>
         </nav>
@@ -62,7 +68,8 @@
     <script src="js/materialize.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
-    
+
+	
     <script src="js/app.js"></script>    
     <script src="js/routes.js"></script>   
     <script src="controller/home-index-controller.js"></script>   
