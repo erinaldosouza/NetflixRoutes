@@ -5,7 +5,8 @@
 
 body {
     width: 99%;
-    max-height: 1000px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 header {
@@ -43,4 +44,59 @@ main {
 
 .ng-valid .ng-dirty {
     border-color: greenyellow;
+}
+
+header {
+    width: 100%;
+    background-color: #b9090b;
+}
+
+footer {
+    width: 100%;
+}
+
+header img {
+    width: 25%;
+    margin-left: 35%;
+}
+
+.slider {
+   width: 50%;
+}
+
+.progress {
+     margin-left: 25% !important;
+     width:50% !important;
+}
+
+main {
+    height: 100% !important;
+}
+
+@media (max-width: 991px){
+
+    .slider {
+        width: 300px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	
+	nav .brand-logo {
+	   font-size: 1.5rem;
+	}
+    
+	.hide-on-med-and-down {
+        display: list-item !important; 
+    }	
+}
+
+@media (max-width: 379px){
+	.slider {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
 }
