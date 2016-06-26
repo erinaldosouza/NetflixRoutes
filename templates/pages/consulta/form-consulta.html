@@ -1,5 +1,9 @@
-<div class="row">
-    <form class="col s12" ng-submit="consultaform.$valid && form.getFlixJson()" name="consultaform" novalidate>
+            <div class="progress" ng-show="form.preload">
+                <div class="indeterminate"></div>
+            </div>
+			
+<div class="row card-panel" >
+    <form  class="col s12" ng-submit="consultaform.$valid && form.getFlixJson()" name="consultaform" novalidate>
         <div class="row">
             <div class="input-field col s8">
                 <select class = "browser-default" ng-model="form.type" required >
@@ -23,7 +27,34 @@
                 </button>
             </div>
         </div>
-    <div>O formulario é {{consultaform.$valid}}</div>
+     <!-- <div>O formulario é {{consultaform.$valid}}</div>  -->
+
+	
+	
     </form>
-    
+	
+
 </div>
+
+   <div class="row card-panel" >
+   <div >
+			<h4 class="grey-text" > Resultado: {{form.type}}</h4>
+			</div>
+    <div class="col s12 m6 l3" ng-repeat="ful in form.info">
+	
+
+	          <div class="card">
+            <div class="card-image">
+              <img src="{{ful.poster}}">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p>{{ful.show_title}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#/detalhes/{{ful.unit}}">Detalhes</a>
+            </div>
+          </div>
+	</div>
+
+  </div>
