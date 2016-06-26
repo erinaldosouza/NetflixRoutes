@@ -11,17 +11,24 @@ angular.module('NetflixRouter')
        .controller('FormController', function($http, $routeParams) {
             this.type;
             this.name;
-            var form = this;
+		
+			var form = this;
+			 this.preload = false;
+			
             
-            this.getFlixJson = function () {            
+            this.getFlixJson = function () {       
+			this.preload = true;			
                 $http.get(apiUrl+this.type+"="+this.name)
                     .success(function(result) {
                     form.info = result;
-                    console.log(form);
+		            console.log(form);
+					
                     
                     }).error(function(error){
+						
                         console.log(error.message);
                     })
+					this.preload = false;
             }
             
         });
