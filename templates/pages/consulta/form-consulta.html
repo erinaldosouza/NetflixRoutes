@@ -38,7 +38,7 @@
 
    <div class="row card-panel" >
    <div >
-			<h4 class="grey-text" > Resultado: {{form.type}}</h4>
+			<h4 class="grey-text" > Resultado para {{form.type}}</h4>
 			</div>
     <div class="col s12 m6 l3" ng-repeat="ful in form.info">
 	
@@ -52,7 +52,7 @@
               <p>{{ful.show_title}}</p>
             </div>
             <div class="card-action">
-              <a href="#/detalhes/{{ful.unit}}">Detalhes</a>
+              <a  ng-href="#/detalhes/{{ful.show_title}}">Detalhes</a>
             </div>
           </div>
 	</div>

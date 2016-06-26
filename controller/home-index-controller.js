@@ -32,3 +32,25 @@ angular.module('NetflixRouter')
             }
             
         });
+		
+		
+		
+angular.module('NetflixRouter')
+       .controller('FilmeExibirController', function($http, $routeParams) {
+	this.preload = true;
+			var controllerExibir = this;
+					
+                $http.get(apiUrl+'title=' + $routeParams.id)
+                    .success(function(result) {
+                    controllerExibir.filme = result;
+		            console.log(controllerExibir);
+					
+                    
+                    }).error(function(error){
+						
+                        console.log(error.message);
+                    })
+					this.preload = false;
+         
+            
+        });		

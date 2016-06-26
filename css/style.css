@@ -56,6 +56,20 @@ main {
 .row{
 	text-align: center;
 }
+
+/* .card{
+	width: 100%;
+} */
+
+.card-content{
+	text-align: left;
+}
+
+.card .card-image img{
+	width: 50%;
+	padding-top: 20px;
+}
+
 @media (max-width: 991px){
 
 		.slider {
