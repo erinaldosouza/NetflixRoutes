@@ -4,42 +4,62 @@ angular.module('NetflixRouter')
             this.preload = false;
             $http.get("#/index");
 			
-
-			
-        });
-
+       });
 
 angular.module('NetflixRouter')
        .controller('FormController', function($http, $routeParams) {
             this.type;
             this.name;
-            var form = this;
+            this.info = [];
+			var form = this;
+            this.preload = false;
             
-            this.getFlixJson = function () {            
-                $http.get(apiUrl+this.type+"="+this.name)
+            this.getFlixJson = function () {       
+			this.preload = true;
+                
+            $http.get(apiUrl+this.type+"="+this.name)
                     .success(function(result) {
-                    form.info = result;
-                    console.log(form);
-                    
+                    form.info = [];
+                    if(result.length > 1) {
+                        for(r in result) {
+                            form.info.push(result[r]);    
+                        }    
+                     } else {
+                        form.info.push(result);    
+                    }
+                    console.log(result);
+					
                     }).error(function(error){
                         console.log(error.message);
                     })
+				
+                this.preload = false;
             }
-            
 <<<<<<< HEAD
         });
 =======
-        }*/
+            
+        });
 		
-//var app = angular.module("NetflixRouter", ["ngResource"]);
-
-function MyCtrl($scope, $resource) {
-			  var TwitterAPI = $resource("http://search.twitter.com/search.json",
-    { callback: "JSON_CALLBACK" },
-    { get: { method: "JSONP" }});
-
-  $scope.search = function() {
-    $scope.searchResult = TwitterAPI.get({ q: $scope.searchTerm });
-  };
-}
->>>>>>> origin/armandoJr
+		
+		
+angular.module('NetflixRouter')
+       .controller('FilmeExibirController', function($http, $routeParams) {
+	this.preload = true;
+			var controllerExibir = this;
+					
+                $http.get(apiUrl+'title=' + $routeParams.id)
+                    .success(function(result) {
+                    controllerExibir.filme = result;
+		            console.log(controllerExibir);
+					
+                    
+                    }).error(function(error){
+						
+                        console.log(error.message);
+                    })
+					this.preload = false;
+         
+            
+        });		
+>>>>>>> a29d3f422bda705129d4ec794e9bfb1796117513

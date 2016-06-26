@@ -55,6 +55,8 @@ main {
 .row{
 	text-align: center;
 }
+<<<<<<< HEAD
+=======
 
 /* .card{
 	width: 100%;
@@ -69,7 +71,8 @@ main {
 	padding-top: 20px;
 }
 
-@media (max-width: 1085px){
+@media (max-width: 991px){
+>>>>>>> a29d3f422bda705129d4ec794e9bfb1796117513
 
 .slider .slides li img {
     max-width: 100% !important;
@@ -84,7 +87,7 @@ main {
 @media (max-width: 1085px){
 
 .slider {
-        width: 280px;
+        width: 300px;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
