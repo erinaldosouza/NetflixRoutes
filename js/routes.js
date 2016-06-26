@@ -7,7 +7,7 @@ angular.module('NetflixRouter')
               .when('/formconsulta',{
                   templateUrl: 'templates/pages/consulta/form-consulta.html',
                   controller: 'FormController',
-                  controllerAs: 'form'
+                  controllerAs: 'fc'
               })
               
               .otherwise({

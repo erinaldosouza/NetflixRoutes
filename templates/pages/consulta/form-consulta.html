@@ -3,10 +3,10 @@
             </div>
 			
 <div class="row card-panel" >
-    <form  class="col s12" ng-submit="consultaform.$valid && form.getFlixJson()" name="consultaform" novalidate>
+    <form  class="col s12" ng-submit="consultaform.$valid && fc.getFlixJson()" name="consultaform" novalidate>
         <div class="row">
             <div class="input-field col s8">
-                <select class = "browser-default" ng-model="form.type" required >
+                <select class = "browser-default" ng-model="fc.type" required >
                     <option value="" disabled selected>Pesquisar...</option>
                     <option value="title">Filme</option>
                     <option value="actor">Ator</option>
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="input-field col s8">
-                <input type="text" id="name" name="name" ng-model="form.name" required/>
+                <input type="text" id="name" name="name" ng-model="fc.name" required/>
                 <label for="name">Nome</label>
             </div>
         </div>
@@ -30,22 +30,18 @@
      <!-- <div>O formulario é {{consultaform.$valid}}</div>  -->
 
 	
-	
     </form>
 	
-
 </div>
 
    <div class="row card-panel" >
    <div >
-			<h4 class="grey-text" > Resultado: {{form.type}}</h4>
-			</div>
-    <div class="col s12 m6 l3" ng-repeat="ful in form.info">
-	
-
-	          <div class="card">
+        <h4 class="grey-text" > Resultado: {{fc.type}}</h4>
+   </div>
+    <div class="col s12 m6 l3" ng-repeat="ful in fc.info">
+        <div class="card">
             <div class="card-image">
-              <img src="{{ful.poster}}">
+              <img id="poster" class = "responsive-img" onerror="noPoster(this)" src="{{ful.poster}}">
               <span class="card-title"></span>
             </div>
             <div class="card-content">
@@ -58,3 +54,9 @@
 	</div>
 
   </div>
+
+<script>
+    function noPoster(img) {
+        img.src = "http://al.go.leg.br/fotos/indisponivel.jpg"
+    }
+</script>
