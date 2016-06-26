@@ -11,7 +11,7 @@
 
 	          <div class="card">
             <div class="card-image">
-              <img src="{{exibir.filme.poster}}">
+              <img onerror="noPoster(this)" src="{{exibir.filme.poster}}">
               <span class="card-title"></span>
             </div>
             <div class="card-content">
@@ -26,13 +26,20 @@
 		  			          <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Detalhes do filme <b>{{exibir.filme.show_title}}</b></span>
-               <p><b>Diretor:</b> {{exibir.filme.director}}</p>
-			  <p><b>Ano:</b> {{exibir.filme.release_year}} - <b>Genero: {{exibir.filme.category}}</b></p>
-			  <p><b>Atores:</b> {{exibir.filme.show_cast}}</p>
-			  <p><b>Sinopse:</b> {{exibir.filme.summary}}</p>
+               <p><b>Diretor</b> {{exibir.filme.director}}</p>
+			  <p><b>Ano</b> {{exibir.filme.release_year}} - <b>Genero {{exibir.filme.category}}</b></p>
+			  <p><b>Atores</b><br> {{exibir.filme.show_cast}}</p>
+			  <p><b>Sinopse</b> <br>{{exibir.filme.summary}}</p>
             </div>
 
           </div>
 	</div>
 
   </div>
+  
+  <script>
+    function noPoster(img) {
+        img.src = "../../../../git/NetflixRoutes/images/notFound.gif";
+		exit;
+    }
+</script>
