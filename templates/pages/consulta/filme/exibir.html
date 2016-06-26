@@ -11,7 +11,7 @@
 
 	          <div class="card">
             <div class="card-image">
-              <img src="{{exibir.filme.poster}}">
+              <img onerror="noPoster(this)" src="{{exibir.filme.poster}}">
               <span class="card-title"></span>
             </div>
             <div class="card-content">
@@ -36,3 +36,10 @@
 	</div>
 
   </div>
+  
+  <script>
+    function noPoster(img) {
+        img.src = "../../../../git/NetflixRoutes/images/notFound.gif";
+		exit;
+    }
+</script>
