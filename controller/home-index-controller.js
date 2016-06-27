@@ -1,9 +1,7 @@
 var apiUrl = "http://netflixroulette.net/api/api.php?";
 angular.module('NetflixRouter')
        .controller('HomeIndexController', function($http) {
-            this.preload = false;
             $http.get("#/index");
-			
        });
 
 angular.module('NetflixRouter')
@@ -15,8 +13,7 @@ angular.module('NetflixRouter')
             this.preload = false;
             
             this.getFlixJson = function () {       
-			this.preload = true;
-                
+			form.preload = true;
             $http.get(apiUrl+this.type+"="+this.name)
                     .success(function(result) {
                     form.info = [];
@@ -27,13 +24,13 @@ angular.module('NetflixRouter')
                      } else {
                         form.info.push(result);    
                     }
+                    
                     console.log(result);
 					
                     }).error(function(error){
-                        console.log(error.message);
+                         form.preload = false;
+                         console.log(error.message);
                     })
-				
-                this.preload = false;
             }
         });		
 		
