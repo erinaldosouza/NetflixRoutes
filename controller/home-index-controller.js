@@ -24,11 +24,12 @@ angular.module('NetflixRouter')
                      } else {
                         form.info.push(result);    
                     }
-                    form.preload = false;
+                    
                     console.log(result);
 					
                     }).error(function(error){
-                        console.log(error.message);
+                         form.preload = false;
+                         console.log(error.message);
                     })
             }
         });		
