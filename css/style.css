@@ -61,6 +61,11 @@ main {
 	text-align: left;
 }
 
+.card .card-content{
+	min-height: 110px;
+}
+
+
 .card .card-image img{
 	width: 50%;
 	padding-top: 20px;
