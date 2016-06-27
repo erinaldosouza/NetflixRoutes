@@ -38,6 +38,9 @@
    <div >
 		<h4 class="grey-text" > Resultado para {{fc.type}}</h4>
 	</div>
+    <div ng-show="fc.noResult">
+		<h5 class="grey-text" >Nenhum resultado encontrado</h5>
+	</div>
     <div class="col s12 m6 l3" ng-repeat="ful in fc.info">
 	   <div class="card">
             <div class="card-image">

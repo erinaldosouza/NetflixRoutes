@@ -11,11 +11,13 @@ angular.module('NetflixRouter')
             this.info = [];
 			var form = this;
             this.preload = false;
+            this.noResult = false;
             
-            this.getFlixJson = function () {       
+            this.getFlixJson = function () {      
 			form.preload = true;
             $http.get(apiUrl+this.type+"="+this.name)
                     .success(function(result) {
+                    form.noResult = false;
                     form.info = [];
                     if(result.length > 1) {
                         for(r in result) {
@@ -24,13 +26,16 @@ angular.module('NetflixRouter')
                      } else {
                         form.info.push(result);    
                     }
-                    
+                
+                    form.preload = false;
                     console.log(result);
 					
                     }).error(function(error){
                          form.preload = false;
+                         form.noResult = true;
                          console.log(error.message);
                     })
+                
             }
         });		
 		
