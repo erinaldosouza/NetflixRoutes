@@ -1,11 +1,10 @@
-var apiUrl = "http://netflixroulette.net/api/api.php?";
 angular.module('NetflixRouter')
        .controller('HomeIndexController', function($http) {
             $http.get("#/index");
        });
 
 angular.module('NetflixRouter')
-       .controller('FormController', function($http, $routeParams) {
+       .controller('FormController', function($http, $routeParams, apiUrl, apiRequest) {
             this.type;
             this.name;
             this.info = [];
@@ -14,33 +13,31 @@ angular.module('NetflixRouter')
             this.noResult = false;
             
             this.getFlixJson = function () {      
-			form.preload = true;
-            $http.get(apiUrl+this.type+"="+this.name)
-                    .success(function(result) {
-                    form.noResult = false;
+                form.preload = true;
+                console.log(apiRequest.getMovie(this.type, this.name))
+                apiRequest.getMovie(this.type, this.name).success(function(result) {
                     form.info = [];
+                    form.noResult = false;
+                    form.preload = false;
+                    
                     if(result.length > 1) {
                         for(r in result) {
                             form.info.push(result[r]);    
                         }    
                      } else {
                         form.info.push(result);    
-                    }
-                
+                     }
+                    
+                }).error(function(error) {
+                    form.noResult = true;
                     form.preload = false;
-                    console.log(result);
-					
-                    }).error(function(error){
-                         form.preload = false;
-                         form.noResult = true;
-                         console.log(error.message);
-                    })
-                
-            }
+                    console.log(error.message);                    
+                });               
+           }
         });		
 		
 angular.module('NetflixRouter')
-       .controller('FilmeExibirController', function($http, $routeParams) {
+       .controller('FilmeExibirController', function($http, $routeParams, apiUrl) {
 	   this.preload = true;
        var controllerExibir = this;
 					
